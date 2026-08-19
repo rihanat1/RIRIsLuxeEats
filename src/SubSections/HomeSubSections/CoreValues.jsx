@@ -6,7 +6,7 @@ import { LiaLeafSolid } from "react-icons/lia";
 
 const CoreValues = () => {
   return (
-    <div className="mt-20 flex flex-col gap-4 items-center text-center h-[120vh] md:h-[80vh] border-2 border-cyan-800 xl:flex xl:flex-col xl:justify-center xl:mt-[-10px]">
+    <div className="mt-20 flex flex-col gap-4 items-center text-center min-h-[120vh] md:h-[80vh] border-2 border-cyan-800 xl:flex xl:flex-col xl:justify-center xl:mt-[-10px]">
       <div className="w-[95%] mx-auto flex flex-col gap-11 xl:w-[85%]">
         <h2 className="mt-24 text-2xl text-black font-semibold">
           Our Core Values
