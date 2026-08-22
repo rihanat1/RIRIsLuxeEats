@@ -6,7 +6,7 @@ import Footer from '../Components/Footer'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-black'>
         <Header/>
         <main className='flex-grow'>
             <Hero/>
