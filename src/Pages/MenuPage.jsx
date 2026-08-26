@@ -4,6 +4,7 @@ import ProductCard from '../Cards/ProductCard'
 import axios from 'axios'
 import { IoSearch } from 'react-icons/io5'
 import MenuFooter from '../Components/MenuFooter'
+import SkeletonLoader from '../Components/SkeletonLoader'
 
 
 
@@ -12,6 +13,7 @@ const MenuPage = () => {
   const [productDetails, setProductDetails] = useState([])
   const [searchValue, setSearchValue] = useState("")
   const [selectedCity, setSelectedCity] = useState("all")
+  const [isLoading, setIsLoading] = useState(false)
 
  function handleSearchValue(e){
   setSearchValue(e.target.value)
@@ -35,6 +37,7 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
   useEffect(()=>{
     async function getProductDetails(){
       try {
+        setIsLoading(true)
         const response = await axios(`${import.meta.env.VITE_API_URL}/recipes`,{
           method:"GET"
         })
@@ -43,10 +46,27 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
      setProductDetails(productDetailWithPrice || []);
       } catch (error) {
         console.log(error);
+      }finally{
+        setIsLoading(false)
       }
     }getProductDetails()
   },[])
-  // bg-[#131313]
+  
+  if(isLoading === false){
+    return (
+      <div className="bg-black w-[100%] min-h-screen ">
+        <Header/>
+        <div className="bg-black w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-24">
+        {
+          Array.from({length:6}).map((_,i)=>{
+            return <SkeletonLoader/>
+          })
+        }
+      </div>
+      <MenuFooter/>
+      </div>
+    )
+  }
   return (
     <div className='bg-black min-h-screen pt-20'> 
       <Header/>

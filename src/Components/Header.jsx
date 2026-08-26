@@ -11,7 +11,9 @@ const Header = () => {
     { label: "Menu", path: AllPaths.menu },
     { label: "Our Story", path: AllPaths.home },
     { label: "Contact", path: AllPaths.contact },
-  ];
+  ]
+  
+  
 
   const [subMenu, setSubMenu] = useState(false);
   function handleSubMenu() {
@@ -23,7 +25,7 @@ const Header = () => {
       isActive
         ? "text-[#F2CA51] border-[#F2CA51]"
         : "text-[#555F6F] border-transparent hover:text-[#F2CA51]"
-    }`;
+    }`
 
   return (
     <div className="flex justify-center h-20 bg-black/50 border-b border-[#4D4635] shadow-sm z-50 backdrop-blur-sm fixed top-0 right-0 left-0">

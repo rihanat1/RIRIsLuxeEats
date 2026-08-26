@@ -30,10 +30,10 @@ const ProductCard = ({ product }) => {
             ADD TO CART
           </button>
         </div>
-        {/* View More as subtle link */}
+        
         <div className="text-center border-t border-[#353534] pt-2">
           <button className="text-xs text-[#C9C6C5] hover:text-[#F2CA51] transition-colors flex items-center justify-center gap-1 w-full">
-            View Full Details 
+            View Full Details    {/* please add link here */}
             <span className="text-[#F2CA51]">→</span>
           </button>
         </div>

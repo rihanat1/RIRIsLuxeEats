@@ -36,7 +36,7 @@ const SendMessage = () => {
   return (
     <div className="min-h-[80vh] w-[100%]  bg-black xl:w-[45%] lg:h-fit">
       <div className=" bg-black w-[95%] h-[100%] mx-auto ">
-        <div className=" h-[100%] flex flex-col gap-6 p-10 bg-[#131313] border-[1px] border-[#4C4220] shadow-md rounded-lg lg:h-[87%]">
+        <div className=" h-[100%] flex flex-col gap-6 p-10  bg-[#131313] border-[1px] border-[#4C4220] shadow-md rounded-lg lg:h-[87%]">
           <p className="font-semibold text-3xl text-[#D4AF37]  ">
             Send a Message
           </p>

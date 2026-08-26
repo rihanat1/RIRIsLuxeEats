@@ -4,7 +4,7 @@ import { GiKnifeFork } from 'react-icons/gi'
 
 const MenuFooter = () => {
   return (
-    <div className='mt-8 pb-28 bg-[#131313] border-t border-[#353534]'>
+    <div className='mt-8 pb-28 bg-[#131313] border-t border-[#353534] lg:pb-10'>
 
       <div className='w-[95%] md:w-[85%] mx-auto'>
         
