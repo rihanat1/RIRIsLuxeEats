@@ -8,9 +8,11 @@ import { IoMdClose } from "react-icons/io";
 
 const Header = () => {
   const navItems = [
+    {label:"Home", path:AllPaths.home},
     { label: "Menu", path: AllPaths.menu },
-    { label: "Our Story", path: AllPaths.home },
+    { label: "Our Story", path: AllPaths.ourStory },
     { label: "Contact", path: AllPaths.contact },
+    
   ]
   
   
@@ -57,7 +59,7 @@ const Header = () => {
               `}
               key={item.label}
             >
-              <NavLink to={item.path} className={linkClass}>
+              <NavLink onClick={() => setSubMenu(false)}  to={item.path} className={linkClass}>
                 {item.label}
               </NavLink>
             </li>

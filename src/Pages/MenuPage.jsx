@@ -41,21 +41,22 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
         const response = await axios(`${import.meta.env.VITE_API_URL}/recipes`,{
           method:"GET"
         })
+        setIsLoading(false)
         const productDetailWithPrice = response.data?.recipes.map(recipe=>({...recipe, price:(Math.random()* 55 + 10).toFixed(2)}))
         // console.log(response.data?.recipes);
      setProductDetails(productDetailWithPrice || []);
       } catch (error) {
         console.log(error);
-      }finally{
-        setIsLoading(false)
       }
+      // finally{
+      //   setIsLoading(false)
+      // }
     }getProductDetails()
   },[])
   
-  if(isLoading === false){
+  if(isLoading === true){
     return (
       <div className="bg-black w-[100%] min-h-screen ">
-        <Header/>
         <div className="bg-black w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-24">
         {
           Array.from({length:6}).map((_,i)=>{
@@ -63,7 +64,7 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
           })
         }
       </div>
-      <MenuFooter/>
+
       </div>
     )
   }

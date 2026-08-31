@@ -8,13 +8,13 @@ import Footer from '../Components/Footer'
 const ContactPage = () => {
   return (
     <div className='bg-black'>
-      <Header/>
+     
       <GetInTouch/>
       <div className="lg:flex lg:w-[85%] lg:mx-auto lg:justify-center lg:gap-4 lg:mb-12 mt-4 ">
         <SendMessage  className="border-2 border-yellow-700 lg:w-[50%] "/>
       <Details className=" w-[45%]"/>
       </div>
-      <Footer/>
+
     </div>
   )
 }

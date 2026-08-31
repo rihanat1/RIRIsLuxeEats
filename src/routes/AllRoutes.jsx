@@ -7,20 +7,25 @@ import AllPaths from "./AllPaths.js";
 const AllRoutes = [
     {
         path:AllPaths.home,
-        element:<Home/>
+        element:<Home/>,
+        hasLayout:true
     },
     {
       path:AllPaths.menu,
-        element:<MenuPage/>
+        element:<MenuPage/>,
+        hasLayout:false
     },
     {
       path:AllPaths.ourStory,
-        element:<OurStoryPage/>
+        element:<OurStoryPage/>,
+        hasLayout:true
     },
     {
       path:AllPaths.contact,
-        element:<ContactPage/>
-    }
+        element:<ContactPage/>,
+        hasLayout:true
+    },
+    
 ]
 
 export default AllRoutes;
