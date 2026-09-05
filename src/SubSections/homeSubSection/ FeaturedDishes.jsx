@@ -8,7 +8,7 @@ const FeaturedDishes = () => {
 
 
   return (
-    <div className=' pt-28 xl:pt-14 px-4 pb-24 xl:pb-16'>
+    <div className=' pt-9 xl:pt-14 px-4 pb-24 xl:pb-16'>
       <div className="md:w-[95%] xl:w-[80%] mx-auto">
         <div className="flex flex-col gap-2 mb-8">
         <h3 className="text-primary text-3xl md:text-[38px] font-normal">Featured Dishes</h3>

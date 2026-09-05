@@ -4,10 +4,12 @@ import './index.css'
 import App from './App.jsx'
 import {BrowserRouter} from 'react-router-dom'
 import GlobalContext from './Context/GlobalContext.jsx'
+import ScrollToTop from './Components/ScrollToTop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+     <ScrollToTop />
     <GlobalContext>
        <App />
     </GlobalContext>

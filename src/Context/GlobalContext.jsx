@@ -4,6 +4,7 @@ import beef from "../assets/Carousel/beef.png"
 import ravioli from "../assets/Carousel/ravioli.png"
 import cake from "../assets/Carousel/cake.png"
 import image4 from "../assets/Carousel/image4.png"
+import Dishes from '../JsFiles/FeaturedDishesData'
 
 
 const CreateGlobalContext = createContext()
@@ -16,16 +17,18 @@ const GlobalContext = ({children}) => {
      const [carouselImages, setCarouselImages] = useState(images)
     const [interval,setInterval] = useState(5000)
      const [productDetails, setProductDetails] = useState([])
+      const [featuredDishes, setFeaturedDishes] = useState(Dishes)
 
     const value = {
-    carouselImages,    
-    setCarouselImages,
-    interval,
-    setInterval,
-    productDetails,
-    setProductDetails
-  };
-
+        carouselImages,
+        setCarouselImages,
+        interval,
+        setInterval,
+        productDetails,
+        setProductDetails,
+        featuredDishes,
+        setFeaturedDishes
+    };
  
    
 
