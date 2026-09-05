@@ -1,9 +1,10 @@
 import { IoStar } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 
 const FeaturedDishCard = ({ dish }) => {
   return (
     <div className="relative border border-primary/50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white hover:border hover:border-[#F2CA51] flex flex-col h-full group">
-         <div className="w-full h-52 overflow-hidden flex-shrink-0">
+         <div className="w-full h-52 overflow-hidden flex-shrink-0 bg-slate-400">
            <img 
              src={dish?.image} 
              alt={dish?.name || 'Dish'} 
@@ -31,10 +32,13 @@ const FeaturedDishCard = ({ dish }) => {
            </div>
            
            <div className="text-center border-t border-[#353534] pt-2">
-             <button className="text-xs text-[#C9C6C5] hover:text-[#F2CA51] transition-colors flex items-center justify-center gap-1 w-full">
-               View Full Details    {/* please add link here */}
-               <span className="text-[#F2CA51]">→</span>
-             </button>
+            <Link 
+            to={`/products/${dish?.id}`}  // ✅ Navigate to product details with ID
+            className="text-xs text-[#C9C6C5] hover:text-[#F2CA51] transition-colors flex items-center justify-center gap-1 w-full"
+          >
+            View Full Details
+            <span className="text-[#F2CA51]">→</span>
+          </Link>
            </div>
          </div>
          <p className="absolute top-2 right-2 border-2 border-[#F2CA51] text-[#F2CA51] text-sm py-1 px-2 bg-[#212121] rounded-xl">

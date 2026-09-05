@@ -3,6 +3,7 @@ const AllPaths = {
     menu:"/menu",
     contact:"/contact",
     ourStory:"/our-story",
-    layout:"/"
+    layout:"/",
+    productsDetails:"/products/:id"
 }
 export default AllPaths;

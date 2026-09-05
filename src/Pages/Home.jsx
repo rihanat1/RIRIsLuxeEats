@@ -1,9 +1,9 @@
 import React from "react";
 import homeImg from "../assets/HomeImages/homeImg.png";
 import Carousel from "../Components/Carousel";
-import Hero from "../homeSubSection/Hero";
-import Cravings from "../homeSubSection/Cravings";
-import FeaturedDishes from "../homeSubSection/ FeaturedDishes";
+import Hero from "../SubSections/homeSubSection/Hero";
+import Cravings from "../SubSections/homeSubSection/Cravings";
+import FeaturedDishes from "../SubSections/homeSubSection/ FeaturedDishes";
 
 const Home = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
-import Dishes from "../JsFiles/FeaturedDishesData.js"
-import FeaturedDishCard from '../Cards/FeaturedDishCard.jsx';
+import Dishes from "../../JsFiles/FeaturedDishesData.js"
+import FeaturedDishCard from '../../Cards/FeaturedDishCard.jsx';
 import { Link } from 'react-router-dom';
-import AllPaths from '../routes/AllPaths.js';
+import AllPaths from '../../routes/AllPaths.js';
 
 const FeaturedDishes = () => {
 

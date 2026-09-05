@@ -15,13 +15,18 @@ const GlobalContext = ({children}) => {
     ]
      const [carouselImages, setCarouselImages] = useState(images)
     const [interval,setInterval] = useState(5000)
+     const [productDetails, setProductDetails] = useState([])
 
     const value = {
     carouselImages,    
     setCarouselImages,
     interval,
     setInterval,
+    productDetails,
+    setProductDetails
   };
+
+ 
    
 
 

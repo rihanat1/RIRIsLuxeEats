@@ -25,11 +25,11 @@ const SendMessage = () => {
   function handleCloseModal() {
     setModal(false);
   }
-  if(modal){
-    document.body.style.overflow ="hidden"
-  }else {
-      document.body.style.overflow = "auto"
-    }
+  if (modal) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 
   console.log(formData);
 
@@ -46,7 +46,10 @@ const SendMessage = () => {
             className="flex flex-col gap-4"
           >
             <div className="flex flex-col gap-2">
-              <label htmlFor="" className="text-[#C9C6C5] text-md font-semibold">
+              <label
+                htmlFor=""
+                className="text-[#C9C6C5] text-md font-semibold"
+              >
                 Full Name
               </label>
               <div className="flex gap-2 items-center border-[1px] border-[#4C4220] outline-none bg-[#1C1B1B] p-3 shadow-md rounded-lg">
@@ -64,10 +67,13 @@ const SendMessage = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="" className="text-md font-semibold text-[#C9C6C5]">
+              <label
+                htmlFor=""
+                className="text-md font-semibold text-[#C9C6C5]"
+              >
                 Email Address
               </label>
-              <div className="flex gap-2 items-center border-[1px] outline-none bg-[#1C1B1B] p-3 shadow-md rounded-lg border-[#4C4220]">
+              <div className="flex gap-2 items-center border outline-none bg-[#1C1B1B] p-3 shadow-md rounded-lg border-[#4C4220]">
                 <MdMailOutline className="text-[23px] text-[#D4AF37]" />
                 <input
                   type="email"
@@ -82,7 +88,10 @@ const SendMessage = () => {
             </div>
 
             <div className="flex flex-col ">
-              <label htmlFor="" className="text-md font-semibold text-[#C9C6C5]">
+              <label
+                htmlFor=""
+                className="text-md font-semibold text-[#C9C6C5]"
+              >
                 Your Message
               </label>
               <textarea
@@ -105,8 +114,14 @@ const SendMessage = () => {
             </button>
 
             {modal && (
-              <div onClick={handleCloseModal} className="w-[100%] h-screen fixed left-0 top-0 inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-center items-center">
-                <div onClick={(e)=>e.stopPropagation()} className="bg-[#b5510a] rounded-2xl w-[50%] sm:w-[47%] md:w-[41%] lg:w-[45%] xl:w-[37%] shadow-2xl p-8 relative">
+              <div
+                onClick={handleCloseModal}
+                className="w-[100%] h-screen fixed left-0 top-0 inset-0 z-50 bg-black/50 backdrop-blur-sm flex justify-center items-center"
+              >
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="bg-[#b5510a] rounded-2xl w-[50%] sm:w-[47%] md:w-[41%] lg:w-[45%] xl:w-[37%] shadow-2xl p-8 relative"
+                >
                   <button
                     onClick={handleCloseModal}
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
@@ -116,20 +131,22 @@ const SendMessage = () => {
 
                   <div className="flex justify-center items-center mb-4">
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
-                       <FaCheckCircle className="text-5xl text-[#151C27]" />
+                      <FaCheckCircle className="text-5xl text-[#151C27]" />
                     </div>
                   </div>
-                   <h3 className="text-2xl font-bold text-center mb-2 text-[#151C27] ">Message Sent!</h3>
-                   <div className="flex flex-col gap-3">
+                  <h3 className="text-2xl font-bold text-center mb-2 text-[#151C27] ">
+                    Message Sent!
+                  </h3>
+                  <div className="flex flex-col gap-3">
                     <p className="text-center font-semibold text-[#151C27]">
-                    <span>
-                      {
-                        formData.fullname || "Valued Customer"
-                      }
-                    </span>, Thank you for reaching out!
-                   </p>
-                   <p className="text-center w-[90%] sm:w-[100%] lg:w-[95%] mx-auto text-[#151C27] font-semibold">Your message has been recieved and RIRI'sLuxeEats will get back to you via email within 24 hours.</p>
-                   </div>
+                      <span>{formData.fullname || "Valued Customer"}</span>,
+                      Thank you for reaching out!
+                    </p>
+                    <p className="text-center w-[90%] sm:w-[100%] lg:w-[95%] mx-auto text-[#151C27] font-semibold">
+                      Your message has been recieved and RIRI'sLuxeEats will get
+                      back to you via email within 24 hours.
+                    </p>
+                  </div>
                 </div>
               </div>
             )}

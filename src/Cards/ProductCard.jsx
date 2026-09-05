@@ -1,5 +1,7 @@
 import React from 'react'
 import { IoStar } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
+import AllPaths from '../routes/AllPaths'
 
 const ProductCard = ({ product }) => {
   return (
@@ -32,10 +34,12 @@ const ProductCard = ({ product }) => {
         </div>
         
         <div className="text-center border-t border-[#353534] pt-2">
-          <button className="text-xs text-[#C9C6C5] hover:text-[#F2CA51] transition-colors flex items-center justify-center gap-1 w-full">
+         <Link to={AllPaths.productsDetails.replace(':id', product?.id || '0')}>
+          <button className="text-xs text-[#C9C6C5] hover:text-[#F2CA51] flex items-center justify-center gap-1 w-full hover:scale-105 transition-all duration-300">
             View Full Details    {/* please add link here */}
             <span className="text-[#F2CA51]">→</span>
           </button>
+          </Link>
         </div>
       </div>
       <p className="absolute top-2 right-2 border-2 border-[#F2CA51] text-[#F2CA51] text-sm py-1 px-2 bg-[#212121] rounded-xl">

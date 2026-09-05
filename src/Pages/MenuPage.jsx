@@ -5,12 +5,12 @@ import axios from 'axios'
 import { IoSearch } from 'react-icons/io5'
 import MenuFooter from '../Components/MenuFooter'
 import SkeletonLoader from '../Components/SkeletonLoader'
+import { useGlobalContextHook } from '../Context/GlobalContext'
 
 
 
 const MenuPage = () => {
-
-  const [productDetails, setProductDetails] = useState([])
+ const { productDetails, setProductDetails } = useGlobalContextHook()
   const [searchValue, setSearchValue] = useState("")
   const [selectedCity, setSelectedCity] = useState("all")
   const [isLoading, setIsLoading] = useState(false)
@@ -45,8 +45,10 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
         const productDetailWithPrice = response.data?.recipes.map(recipe=>({...recipe, price:(Math.random()* 55 + 10).toFixed(2)}))
         // console.log(response.data?.recipes);
      setProductDetails(productDetailWithPrice || []);
+      setIsLoading(false)
       } catch (error) {
-        console.log(error);
+        console.log(error)
+        setIsLoading(false);
       }
       // finally{
       //   setIsLoading(false)
@@ -79,7 +81,7 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
           onChange={handleSearchValue}
           value={searchValue}
             type="text" 
-            placeholder='Search by name (Or cuisne below)' 
+            placeholder='Search by name (Or cuisine)' 
             className='placeholder:text-[#6B7280] text-white bg-transparent w-[92%] outline-none p-2' 
           />
         </div>
@@ -97,7 +99,7 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
         </select>
       </div>
 
-      <div className="w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-8">
+      <div className="w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto mt-8">
         
         {
           filteredSearch.map((product)=>{

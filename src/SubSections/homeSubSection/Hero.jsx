@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AllPaths from '../routes/AllPaths'
+import AllPaths from '../../routes/AllPaths.js'
 
 const Hero = () => {
   return (

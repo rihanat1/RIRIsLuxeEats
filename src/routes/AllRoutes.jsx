@@ -2,6 +2,7 @@ import ContactPage from "../Pages/ContactPage.jsx";
 import Home from "../Pages/Home.jsx";
 import MenuPage from "../Pages/MenuPage.jsx";
 import OurStoryPage from "../Pages/OurStoryPage.jsx";
+import ProductDetailsPage from "../Pages/ProductDetailsPage.jsx";
 import AllPaths from "./AllPaths.js";
 
 const AllRoutes = [
@@ -25,6 +26,11 @@ const AllRoutes = [
         element:<ContactPage/>,
         hasLayout:true
     },
+    {
+      path:AllPaths.productsDetails,
+        element:<ProductDetailsPage/>,
+        hasLayout:false
+    }
     
 ]
 

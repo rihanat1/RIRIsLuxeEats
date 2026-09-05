@@ -1,5 +1,5 @@
 import React from 'react'
-import SVIcons from "../SVIcons.jsx"
+import SVIcons from "../../SVIcons.jsx"
 
 const Cravings = () => {
   const text = ["Pizza", "Sushi", "Desserts", "Burgers", "Bowls", "Vegan"]
