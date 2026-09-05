@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from 'react'
-import image from "../assets/Carousel/image.png"
-import image1 from "../assets/Carousel/image1.png"
-import image2 from "../assets/Carousel/image2.png"
-import image3 from "../assets/Carousel/image3.png"
+import burger from "../assets/FeaturedImages/burger.png"
+import beef from "../assets/Carousel/beef.png"
+import ravioli from "../assets/Carousel/ravioli.png"
+import cake from "../assets/Carousel/cake.png"
 import image4 from "../assets/Carousel/image4.png"
 
 
@@ -11,7 +11,7 @@ const CreateGlobalContext = createContext()
 const GlobalContext = ({children}) => {
 
     const images = [
-        image, image1, image2 , image3 , image4
+        burger, beef, ravioli , cake , image4
     ]
      const [carouselImages, setCarouselImages] = useState(images)
     const [interval,setInterval] = useState(5000)

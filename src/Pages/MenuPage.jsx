@@ -59,8 +59,8 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
       <div className="bg-black w-[100%] min-h-screen ">
         <div className="bg-black w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-24">
         {
-          Array.from({length:6}).map((_,i)=>{
-            return <SkeletonLoader/>
+          Array.from({length:9}).map((_,i)=>{
+            return <SkeletonLoader key={i}/>
           })
         }
       </div>

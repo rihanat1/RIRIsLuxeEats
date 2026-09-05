@@ -10,6 +10,10 @@ export default {
         hero: 'url("/src/assets/HomeImages/heroImg.png")',
         heroNew:"url('/src/assets/HomeImages/newHeroImg.png')"
       },
+      colors:{
+        primary:"#f2ca50",
+        secondary:"#c9c6c5"
+      }
     },
   },
   plugins: [],

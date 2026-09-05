@@ -1,8 +1,10 @@
 import React from 'react'
+import Header from './Header'
 
 const SkeletonLoader = () => {
   return (
     <div className='bg-black'>
+       <Header/>
         <div className="relative border animate-pulse rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white hover:border hover:border-[#F2CA51] flex flex-col h-full group">
               <div className="w-full h-52 bg-slate-400 animate-pulse overflow-hidden flex-shrink-0">
                 

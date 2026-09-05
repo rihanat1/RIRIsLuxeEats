@@ -28,7 +28,7 @@ const Carousel = () => {
   }
 
   return (
-    <div className="relative w-[100%] min-h-[75vh] border-2 border-green-600 mx-auto overflow-hidden rounded-lg shadow-lg">
+    <div className="relative w-[100%] min-h-[75vh] md:min-h-[89.8vh] mx-auto overflow-hidden rounded-lg shadow-lg">
 
       
 
