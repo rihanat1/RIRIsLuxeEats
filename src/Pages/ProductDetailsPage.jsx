@@ -23,11 +23,11 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     }
   }, [productDetails]); //initially, product details is false. so when the api loads, productdetails is not empty then useEffect triggers so isLoading is set to false. This will prevent the page from rendering before the data is loaded.
-
+ 
   const allCardData =
     productDetails.find((card) => String(card?.id) === String(id)) ||
     featuredDishes.find((dish) => String(dish?.id) === String(id));
-  console.log("allCardData:", allCardData);
+  // console.log("allCardData:", allCardData);
 
   if (allCardData) {
     const isFeatured = !productDetails.find(
@@ -47,9 +47,9 @@ const ProductDetailsPage = () => {
                 alt={allCardData?.name}
                 className="w-[100%] md:w-[100%] h-[100%] relative"
               />
-              <div className="flex gap-2 items-center w-fit absolute top-10 left-3 bg-black/50 backdrop-blur-sm border border-[#4D4635] rounded-lg p-2">
+              <div className="flex gap-2 items-center w-fit absolute top-10 left-3 bg-black/50 backdrop-blur-sm border border-[#4D4635] rounded-lg py-2 px-3">
                 <FaRegStar className="text-primary" />
-                <p className="text-primary">{allCardData?.rating || "4.5"} ★</p>
+                <p className="text-primary">{allCardData?.rating || "4.5"}</p>
               </div>
             </div>
             {/* image div section end */}
@@ -80,7 +80,7 @@ const ProductDetailsPage = () => {
                         Prep Time
                       </p>
                       <p className="font-bold text-[16px]">
-                        {allCardData?.prepTime || "N/A"}
+                        {allCardData?.cookTimeMinutes || "N/A"}
                       </p>
                     </div>
                   </div>

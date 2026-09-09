@@ -5,12 +5,14 @@ import AllRoutes from './routes/AllRoutes'
 import './index.css'
 import Layout from './Components/Layout';
 import AllPaths from './routes/AllPaths';
+import ScrollToTop from './Components/ScrollToTop';
 
 
 function App() {
   return (
     
       <Routes>
+
        {AllRoutes.map((data) => {
         return data.hasLayout ? (
           <Route key={data.path} path={AllPaths.layout} element={<Layout />}>

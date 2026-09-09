@@ -5,8 +5,11 @@ import { FaOpencart } from "react-icons/fa";
 import AllPaths from "../routes/AllPaths";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import CartCard from "./CartCard";
+import { useGlobalContextHook } from "../Context/GlobalContext";
 
 const Header = () => {
+  const {cart} = useGlobalContextHook()
   const navItems = [
     {label:"Home", path:AllPaths.home},
     { label: "Menu", path: AllPaths.menu },
@@ -67,10 +70,10 @@ const Header = () => {
         </ul>
 
         <div className="z-50 flex gap-4 items-center justify-center">
-          <NavLink to="/cart">
+          <NavLink to="/view-cart">
             <div className="z-50 flex items-center gap-2 rounded-xl text-[14px] font-bold bg-primary text-black px-3 py-1 hover:bg-[#D4AF37] transition">
               <FaOpencart />
-              <span>Cart (0)</span>
+              <span>Cart {cart.length}</span>
             </div>
           </NavLink>
           <div onClick={handleSubMenu} className="cursor-pointer md:hidden">

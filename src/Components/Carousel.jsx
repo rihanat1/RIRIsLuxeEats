@@ -3,7 +3,7 @@ import { useGlobalContextHook } from "../Context/GlobalContext";
 
 const Carousel = () => {
  
-  const { carouselImages, interval } = useGlobalContextHook();
+  const { carouselImages, slideInterval } = useGlobalContextHook();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -19,9 +19,9 @@ const Carousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, interval);
+    }, slideInterval);
     return () => clearInterval(timer);
-  }, [interval]);
+  }, [slideInterval]);
 
   if (!carouselImages|| carouselImages.length === 0) {
     return null;

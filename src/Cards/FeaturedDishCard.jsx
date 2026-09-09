@@ -1,7 +1,9 @@
 import { IoStar } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
+import { useGlobalContextHook } from '../Context/GlobalContext'
 
 const FeaturedDishCard = ({ dish }) => {
+  const {addToCart} = useGlobalContextHook()
   return (
     <div className="relative border border-primary/50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white hover:border hover:border-[#F2CA51] flex flex-col h-full group">
          <div className="w-full h-52 overflow-hidden flex-shrink-0 bg-slate-400">
@@ -26,7 +28,7 @@ const FeaturedDishCard = ({ dish }) => {
            </p>
            <div className="border-t border-[#353534] flex justify-between items-center py-4 mt-auto">
              <p className="text-[#F2CA51] text-lg font-bold">${dish?.price || '0.00'}</p>
-             <button className="bg-primary/20 hover:bg-primary text-primary hover:text-black xl:text-xs border border-primary/50 text-black py-1.5 px-5 text-sm rounded-lg hover:bg-[#e6b800] transition-colors md:px-3">
+             <button onClick={()=>addToCart(dish)} className="bg-primary/20 hover:bg-primary text-primary hover:text-black xl:text-xs border border-primary/50 text-black py-1.5 px-5 text-sm rounded-lg hover:bg-[#e6b800] transition-colors md:px-3">
                ADD TO CART
              </button>
            </div>

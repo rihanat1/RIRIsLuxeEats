@@ -3,6 +3,7 @@ import Home from "../Pages/Home.jsx";
 import MenuPage from "../Pages/MenuPage.jsx";
 import OurStoryPage from "../Pages/OurStoryPage.jsx";
 import ProductDetailsPage from "../Pages/ProductDetailsPage.jsx";
+import ViewCartPage from "../Pages/ViewCartPage.jsx";
 import AllPaths from "./AllPaths.js";
 
 const AllRoutes = [
@@ -30,8 +31,13 @@ const AllRoutes = [
       path:AllPaths.productsDetails,
         element:<ProductDetailsPage/>,
         hasLayout:false
+    },
+    {
+      path:AllPaths.viewCart,
+        element:<ViewCartPage/>,
+        hasLayout:false
     }
-    
+
 ]
 
 export default AllRoutes;

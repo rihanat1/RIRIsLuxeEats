@@ -2,8 +2,10 @@ import React from 'react'
 import { IoStar } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import AllPaths from '../routes/AllPaths'
+import { useGlobalContextHook } from '../Context/GlobalContext'
 
 const ProductCard = ({ product }) => {
+  const {addToCart} = useGlobalContextHook()
   return (
     <div className="relative border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white hover:border hover:border-[#F2CA51] flex flex-col h-full group">
       <div className="w-full h-52 overflow-hidden flex-shrink-0">
@@ -28,7 +30,7 @@ const ProductCard = ({ product }) => {
         </p>
         <div className="border-t border-[#353534] flex justify-between items-center py-4 mt-auto">
           <p className="text-[#F2CA51] text-lg font-bold">${product?.price || '0.00'}</p>
-          <button className="bg-[#F2CA51] text-black py-1.5 px-5 text-sm rounded-lg hover:bg-[#e6b800] transition-colors">
+          <button onClick={()=>{addToCart(product)}} className="bg-[#F2CA51] text-black py-1.5 px-5 text-sm rounded-lg hover:bg-[#e6b800] transition-colors">
             ADD TO CART
           </button>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaOpencart } from 'react-icons/fa'
 import { GiKnifeFork } from 'react-icons/gi'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const ProductDetailsHeader = () => {
   return (
@@ -16,12 +16,12 @@ const ProductDetailsHeader = () => {
 
         
         <div className="z-50 flex gap-4 items-center justify-center">
-          <NavLink to="/cart">
+          <Link to="/view-cart">
             <div className="z-50 flex items-center gap-2 rounded-xl text-[14px] font-bold bg-primary text-black px-3 py-1 hover:bg-[#D4AF37] transition">
               <FaOpencart />
               <span>Cart (0)</span>
             </div>
-          </NavLink>
+          </Link>
    
         </div>
       </div>
