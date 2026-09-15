@@ -1,4 +1,4 @@
-# RIRISLUXEEATS 🍽️
+# RIRISLUXEEATS 
 
 RIRISLUXEEATS is a dummy restaurant website where users can browse a menu of international dishes, add items to a cart, and proceed to checkout. It's built as a practice/portfolio project showcasing a full front-end e-commerce style flow — from browsing to cart to (eventually) payment.
 
