@@ -99,7 +99,7 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
         </select>
       </div>
 
-      <div className="w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto mt-8">
+      <div className="w-[95%] md:w-[85%] overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-8">
         
         {
           filteredSearch.map((product)=>{

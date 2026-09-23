@@ -4,7 +4,7 @@ import { MdOutlineSpeakerNotes } from "react-icons/md";
 
 const Details = () => {
   return (
-    <div className=" flex flex-col pb-24 gap-4 lg:gap-1 min-h-[72vh] mt-6 pt-3 lg:mt-0 lg:h-[100%] lg:p-0 ">
+    <div className="flex flex-col pb-24 gap-4 lg:gap-1 min-h-[72vh] mt-6 pt-3 lg:mt-0 lg:h-[100%] lg:p-0 ">
       <div className="  flex flex-col gap-4 min-h-[30vh] md:min-h-fit mt-6 lg:mt-0 pt-3 lg:p-0">
         <div className=" w-[95%] min-h-[40vh] sm:min-h-fit flex flex-col gap-5 sm:flex-row mx-auto sm:gap-3 lg:w-[100%] ">
           <div className="w-[100%] flex flex-col gap-3 sm:w-[49%] pr-6 pl-2 pt-2 pb-2 rounded-xl border-[1px] border-[#4C4220] shadow-md hover:-translate-y-1 duration-300 transition-all ease-in-out bg-[#131313] lg:w-[50%] lg:pb-3">
