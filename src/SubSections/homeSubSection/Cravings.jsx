@@ -5,9 +5,9 @@ const Cravings = () => {
   const text = ["Pizza", "Sushi", "Desserts", "Burgers", "Bowls", "Vegan"]
 
   return (
-    <div className=' flex flex-col gap-10 min-h-[59vh] xl:min-h-[45vh] items-center justify-center text-white'>
-      <h2 className="text-primary font-bold text-[35px] -ml-24 md:ml-0">Craving Something Specific?</h2>
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-10 md:w-[90%] xl:w-[80%] md:gap-4 justify-around">
+    <div className='mt-0 flex flex-col gap-10 pt-20 pb-20 xl:min-h-[45vh] items-center justify-center text-white'>
+      <h2 className="text-primary text-2xl md:text-3xl font-bold lg:text-[35px] lg:-ml-24 md:ml-0">Craving Something Specific?</h2>
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:w-[90%] xl:w-[80%] md:gap-4 justify-around">
         {SVIcons.map((icon, index) => {
           return (
             <div 

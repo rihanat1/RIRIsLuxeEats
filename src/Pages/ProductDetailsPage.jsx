@@ -22,7 +22,7 @@ const ProductDetailsPage = () => {
     if (apiDataLoaded || featuredDataLoaded) {
       setIsLoading(false);
     }
-  }, [productDetails]); //initially, product details is false. so when the api loads, productdetails is not empty then useEffect triggers so isLoading is set to false. This will prevent the page from rendering before the data is loaded.
+  }, [productDetails]); // Riri's note: initially, product details is false. so when the api loads, productdetails is not empty then useEffect triggers so isLoading is set to false. This will prevent the page from rendering before the data is loaded.
  
   const allCardData =
     productDetails.find((card) => String(card?.id) === String(id)) ||
@@ -60,11 +60,11 @@ const ProductDetailsPage = () => {
                 <p className="text-primary text-sm">Add to Cart</p>
               </div>
               <div className="p-2 flex flex-col gap-4 lg:w-[100%]">
-                <div className="flex justify-between items-center">
-                  <p className="text-primary font-medium text-3xl whitespace-nowrap">
+                <div className="flex-col gap-2 md:flex-row justify-between items-center">
+                  <p className="text-primary font-medium text-2xl md:text-3xl whitespace-nowrap">
                     {allCardData?.name}
                   </p>
-                  <p className="font-sans text-[36px] text-primary">
+                  <p className="font-sans text-[27px] md:text-[36px] text-primary">
                     ${allCardData?.price}
                   </p>
                 </div>
@@ -73,10 +73,10 @@ const ProductDetailsPage = () => {
                 <div className="flex gap-4 lg:gap-2 mt-5 w-full ">
                   {/* prepTime card start */}
 
-                  <div className="bg-[#191818] backdrop-blur(16px) w-[50%] shadow-[0_8px_20px_-4px_rgba(242,202,81,0.3)] text-secondary border border-[#4D4635] rounded-lg pl-3 py-2 text-[14px] font-light flex gap-4 items-center pr-20 ">
+                  <div className="bg-[#191818] backdrop-blur(16px) w-[50%] shadow-[0_8px_20px_-4px_rgba(242,202,81,0.3)] text-secondary border border-[#4D4635] rounded-lg pl-3 py-2 text-xs md:text-[14px] font-light flex gap-4 items-center pr-20 ">
                     <MdOutlineTimer className="text-xl text-primary" />
                     <div className="flex flex-col">
-                      <p className="font-semibold uppercase tracking-widest lg:text-sm lg:whitespace-nowrap">
+                      <p className="font-semibold uppercase tracking-widest lg:text-sm whitespace-nowrap">
                         Prep Time
                       </p>
                       <p className="font-bold text-[16px]">
@@ -89,9 +89,9 @@ const ProductDetailsPage = () => {
                   {/* calorie card start */}
 
                   <div className="bg-[#191818] backdrop-blur(16px) w-[50%] shadow-[0_8px_20px_-4px_rgba(242,202,81,0.3)] text-secondary border border-[#4D4635] rounded-lg pl-3 py-2 text-[14px] font-light flex gap-4 lg:gap-3 items-center lg:pr-1 ">
-                    <FaBurn className="text-xl text-primary" />
+                    <FaBurn className="hidden md:block text-xl text-primary" />
                     <div className="flex flex-col">
-                      <p className="font-semibold uppercase tracking-widest lg:text-sm whitespace-nowrap">
+                      <p className="font-semibold uppercase tracking-widest text-xs lg:text-sm lg:whitespace-nowrap">
                         Calories Per Serving
                       </p>
                       <p className="font-bold text-[16px]">
@@ -107,7 +107,7 @@ const ProductDetailsPage = () => {
                   <p className="mt-4 text-primary text-3xl font-normal w-full pb-2 border-b border-primary">
                     Ingredients
                   </p>
-                  <ul className="grid grid-cols-2 gap-4 list-disc marker:text-primary marker:text-3xl ml-4 lg:text-xs">
+                  <ul className="grid grid-cols-2 gap-5 list-disc marker:text-primary marker:text-3xl ml-4 lg:text-xs">
                     {allCardData?.ingredients?.map((ingredient, index) => (
                       <li
                         key={index}
@@ -129,7 +129,7 @@ const ProductDetailsPage = () => {
             {/* details:nbame,price... end*/}
           </div>
         </div>
-        <Footer />
+     
       </div>
     );
   }

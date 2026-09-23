@@ -74,8 +74,8 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
     <div className='bg-black min-h-screen pt-20'> 
       <Header/>
 
-      <div className="pb-2 pt-2 sticky top-20 z-40 backdrop-blur-sm border-[#99907C] bg-black/50 border-b flex flex-col w-[95%] md:w-[85%] mx-auto gap-3 md:flex-row">
-        <div className="w-[100%] border-2 border-[#99907C] bg-transparent p-[6px] rounded-xl overflow-hidden flex items-center">
+      <div className="pb-2 pt-2 sticky top-20 z-40 backdrop-blur-lg border-[#99907C] bg-black/50 border-b flex flex-col w-[95%] md:w-[85%] mx-auto gap-3 md:flex-row">
+        <div className="w-[100%] border-2 border-[#99907C] bg-transparent backdrop-blur-sm p-[6px] rounded-xl overflow-hidden flex items-center">
           <IoSearch className='text-[#F2CA51]' />
           <input 
           onChange={handleSearchValue}
@@ -85,7 +85,7 @@ const cuisine = [...new Set(productDetails.map((cuis)=>cuis?.cuisine))]
             className='placeholder:text-[#6B7280] text-white bg-transparent w-[92%] outline-none p-2' 
           />
         </div>
-        <select value={selectedCity} onChange={handleSelectedCity} name="cuisine" id="cuisine" className=' bg-transparent border-2 border-[#99907C] w-[30%] outline-none rounded-lg p-2 text-[#6B7280]'>
+        <select value={selectedCity} onChange={handleSelectedCity} name="cuisine" id="cuisine" className=' bg-transparent backdrop-blur-lg border-2 border-[#99907C] w-[50%] outline-none rounded-lg p-2 text-[#6B7280]'>
           <option value="all" className='p-2 text-[#6B7280]'>Search by cuisine</option>
           {
             cuisine.map((each,i)=>{

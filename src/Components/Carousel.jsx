@@ -21,14 +21,14 @@ const Carousel = () => {
       nextSlide();
     }, slideInterval);
     return () => clearInterval(timer);
-  }, [slideInterval]);
+  }, [slideInterval,carouselImages.length,currentIndex]);
 
   if (!carouselImages|| carouselImages.length === 0) {
     return null;
   }
 
   return (
-    <div className="relative w-[100%] min-h-[75vh] md:min-h-[89.8vh] mx-auto overflow-hidden rounded-lg shadow-lg">
+    <div className="relative w-full min-h-[67vh] md:min-h-[70vh] lg:min-h-[85vh] xl:h-[100%] mx-auto overflow-hidden rounded-lg shadow-lg">
 
       
 

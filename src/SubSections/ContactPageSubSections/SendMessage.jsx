@@ -24,6 +24,7 @@ const SendMessage = () => {
 
   function handleCloseModal() {
     setModal(false);
+    setFormData(allData)
   }
   if (modal) {
     document.body.style.overflow = "hidden";
@@ -31,7 +32,7 @@ const SendMessage = () => {
     document.body.style.overflow = "auto";
   }
 
-  console.log(formData);
+  // console.log(formData);
 
   return (
     <div className="min-h-[80vh] w-[100%]  bg-black xl:w-[45%] lg:h-fit">
@@ -108,7 +109,7 @@ const SendMessage = () => {
 
             <button
               type="submit"
-              className="bg-[#D4AF37] text-black font-semibold py-[10px] rounded-xl mt-1 text-[14px] hover:bg-[#9D4300]"
+              className="bg-[#D4AF37] text-black font-semibold py-[10px] rounded-xl mt-1 text-[14px] "
             >
               Send Message
             </button>
@@ -120,7 +121,7 @@ const SendMessage = () => {
               >
                 <div
                   onClick={(e) => e.stopPropagation()}
-                  className="bg-[#b5510a] rounded-2xl w-[50%] sm:w-[47%] md:w-[41%] lg:w-[45%] xl:w-[37%] shadow-2xl p-8 relative"
+                  className="bg-primary/70 rounded-2xl w-[80%] sm:w-[47%] md:w-[41%] lg:w-[45%] xl:w-[37%] shadow-2xl p-8 relative"
                 >
                   <button
                     onClick={handleCloseModal}

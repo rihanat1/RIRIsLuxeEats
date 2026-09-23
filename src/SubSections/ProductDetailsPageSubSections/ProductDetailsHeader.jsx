@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaOpencart } from 'react-icons/fa'
+import { FaArrowLeftLong } from 'react-icons/fa6';
 import { GiKnifeFork } from 'react-icons/gi'
 import { Link, NavLink } from "react-router-dom";
 
@@ -22,6 +23,11 @@ const ProductDetailsHeader = () => {
               <span>Cart (0)</span>
             </div>
           </Link>
+          <Link to="/menu" className="flex gap-1 items-center text-secondary ">
+                    <button className="flex gap-1 items-center text-secondary cursor-pointer ">
+                      <FaArrowLeftLong /> Menu
+                    </button>
+                  </Link>
    
         </div>
       </div>
