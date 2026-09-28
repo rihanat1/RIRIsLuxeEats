@@ -6,13 +6,16 @@ import cake from "../assets/Carousel/cake.png";
 import image4 from "../assets/Carousel/image4.png";
 import Dishes from "../JsFiles/FeaturedDishesData";
 
+
+console.log('Type:', typeof FeaturedDishes)
+
 const CreateGlobalContext = createContext();
 
 const GlobalContext = ({ children }) => {
   const images = [burger, beef, ravioli, cake, image4];
   const [carouselImages, setCarouselImages] = useState(images);
   const [slideInterval, setSlideInterval] = useState(5000);
-  const [productDetails, setProductDetails] = useState([]);
+     const [productDetails, setProductDetails] = useState([...Dishes])
   const [featuredDishes, setFeaturedDishes] = useState(Dishes);
   const [cart, setCart] = useState([]);
   

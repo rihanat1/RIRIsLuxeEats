@@ -19,12 +19,11 @@ const FeaturedDishes = () => {
             </div>  
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:w-[100%] mx-auto">
-        {Dishes.map((dish, index) => (
-          <FeaturedDishCard key={index} dish={dish}/>
-         
-        ))}
-      </div>
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 mx-auto items-center justify-center">
+  {Dishes.slice(0, 3).map((dish, index) => (
+    <FeaturedDishCard key={index} dish={dish} />
+  ))}
+</div>
        <div className="text-center md:hidden">
         <Link to={AllPaths.menu}>
                   <button className="bg-black/50 hover:bg-black/70 border border-primary text-primary text-sm font-light hover:scale-105 transition-all duration-300  px-9 py-4 rounded-lg capitalize mt-8 mb-8">View all dishes →</button>
