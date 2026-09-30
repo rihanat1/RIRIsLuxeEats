@@ -1,129 +1,147 @@
-# RIRISLUXEEATS 
+# Riri's Luxe Eats
 
-RIRISLUXEEATS is a dummy restaurant website where users can browse a menu of international dishes, add items to a cart, and proceed to checkout. It's built as a practice/portfolio project showcasing a full front-end e-commerce style flow — from browsing to cart to (eventually) payment.
+🔗 **Live Demo:** [View site](https://ririsluxeeats.netlify.app)
 
-> **Status:** In progress. Cart view page is currently being built.
 
----
-
-##  Features
-
-- **Homepage Carousel** — Rotating featured images on the landing page
-- **Featured Dishes** — Curated selection of dishes highlighted on the homepage
-- **Browse Menu** — View a list of dishes pulled from an external recipes API
-- **Search & Filter** — Search dishes by name or cuisine, and filter the menu by cuisine type
-- **Loading States** — Skeleton loaders shown while dish data is being fetched
-- **Dish Details** — See individual dish info before adding to cart
-- **Cart Management** — Add items to cart, increase/decrease quantity, and remove items entirely (items auto-remove when quantity hits 0)
-- **View Cart** — Review items added before checkout *(in progress)*
-- **Signup Before Checkout** — Users must create an account (name, phone number, address) before proceeding to payment *(planned)*
-- **Payment Flow** — Users proceed to payment after signup *(planned)*
-- **Contact Page** — Customers can send a message to the restaurant with any questions or feedback 
+RIRISLUXEEATS is a dummy restaurant website where users can browse a menu of international dishes, add items to a cart, and proceed to checkout. Built as a portfolio project showcasing a full front-end e-commerce flow — from browsing to cart to placing an order.
 
 ---
 
-##  Tech Stack
+## Features
 
-- **React.js** — UI library
-- **Vite** — Build tool / dev server
-- **Tailwind CSS** — Styling, responsiveness
-- **React Router** — Client-side routing
-- **React Context API (useContext)** — Global state management via a custom `GlobalContext` provider, handling cart state, featured dishes, and carousel images
-- **useEffect** — Fetches dish data from the DummyJSON API on the Menu page when it loads
-- **Axios** — HTTP client used to fetch recipe data from the API
-- **DummyJSON Recipes API** — Dish/menu data source ([https://dummyjson.com/recipes](https://dummyjson.com/recipes))
+- **Menu browsing** — Dishes fetched from an external recipes API, merged with a curated list of featured dishes
+- **Search & filter** — Filter by name or cuisine in real time
+- **Cart** — Add, increase, decrease, and remove items with live totals
+- **Order Summary** — Subtotal, taxes & fees, delivery fee, and total calculated dynamically
+- **Signup flow** — Collects name, email, address, and city; persists the user to `localStorage`
+- **Checkout flow** — Cart → Signup → Confirm page with delivery details, items, and totals
+- **Returning user experience** — Logged-in users skip signup and go straight to confirm
+- **Responsive layout** — Optimized for mobile, tablet, and desktop
 
 ---
 
-## 📂 Project Structure (example)
+## Tech Stack
+
+- **React** — UI library with hooks and Context API
+- **React Router** — client-side routing
+- **Tailwind CSS** — utility-first styling
+- **Axios** — HTTP requests for the recipes API
+- **Vite** — build tool and dev server
+- **React Icons** — icon set used across the UI
+
+---
+
+## Project Structure
 
 ```
-ririsluxeeats/
-├── src/
-│   ├── assets/
-│   ├── cards/
-│   ├── components/
-│   ├── context/
-│   ├── JsFiles/FeaturedDishesData
-│   ├── pages/
-│   │   ├── ContactPage
-│   │   ├── Home
-│   │   ├── OurStoryPage
-│   │   ├── ProductDetailsPage
-│   │   └── ViewCartPage
-│   ├── routes/
-│   │   ├── AllPaths
-│   │   └── AllRoutes
-│   ├── subSections/
-│   │   ├── ContactPageSubSection
-│   │   ├── homeSubSection
-│   │   ├── ourStorySubSection
-│   │   └── productDetailSubSection
-│   ├── App.css
-│    ├── App.jsx
-│    ├── index.css
-│    ├── main.jsx
-│   └── SVIcons.jsx
-├── public/
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
+src/
+├── assets/                # Images
+├── Cards/                 # Reusable card components (ProductCard)
+├── Components/            # Shared UI (Header, Footer, SkeletonLoader)
+├── Context/               # GlobalContext — cart, user, product state
+├── JsFiles/               # Static data (FeaturedDishesData)
+├── Pages/                 # Route-level pages
+│   ├── MenuPage.jsx
+│   ├── ViewCartPage.jsx
+│   ├── SignupPage.jsx
+│   └── ConfirmPage.jsx
+│── Routes/.               #paths and routes 
+├── SubSections/           # Page sections (AllOrders, OrderSummary, headers)
+
 ```
 
+---
 
-##  Getting Started
+## User Flow
 
-### Prerequisites
+```
+Menu → Add to cart → View Cart → Place Order
+                                    │
+                          ┌─────────┴─────────┐
+                          │                   │
+                     New user            Returning user
+                          │                   │
+                     Signup Page         (skip signup)
+                          │                   │
+                          └─────────┬─────────┘
+                                    │
+                              Confirm Page
+                                    │
+                              Order Placed
+```
 
-- Node.js installed 
-- npm
+---
 
-### Installation
+## State Management
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/ririsluxeeats.git
-   cd ririsluxeeats
-   ```
+Global state is handled through React Context (`GlobalContext`):
 
-2. Install dependencies
-   ```bash
-   npm install
-   ```
+- **`cart`** — array of cart items with quantity
+- **`user`** — logged-in user object, persisted to `localStorage` under `riri_user`
+- **`productDetails`** — combined API dishes and featured dishes
+- **Cart actions** — `addToCart`, `increaseQuantity`, `decreaseQuantity`, `removeFromCart`
+- **Auth actions** — `signUp`, `logOut`
 
-3. Run the development server
-   ```bash
-   npm run dev
-   ```
+---
 
-4. Open the app in your browser at the local URL shown in the terminal
+## LocalStorage
+
+The app uses `localStorage` to remember returning users:
+
+| Key | Purpose |
+|---|---|
+| `riri_user` | Stores the logged-in user's name, email, address, city |
+
+On page load, the app reads `riri_user` and restores the session automatically.
+
+
+---
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
 
 ### Environment Variables
 
-This project uses an environment variable for the API base URL. Create a `.env` file in the project root:
+Create a `.env` file at the root:
 
 ```
-VITE_API_URL=https://dummyjson.com
+VITE_API_URL=your_api_base_url
 ```
+
+The app fetches recipes from `${VITE_API_URL}/recipes`.
 
 ---
 
-## 🔌 API Reference
+### Deployment
 
-Dish data is fetched from the DummyJSON Recipes API:
-
-```
-GET https://dummyjson.com/recipes
-```
-
-No API key required.
-
-> **Note:** The DummyJSON Recipes API does not include prices, so a random price is generated client-side for each dish when it's fetched.
+Deployed on Netlify. Every push to `main` triggers an automatic build and deploy.
 
 ---
 
-## Contributing
+## In Progress
 
-This is currently a solo learning/portfolio project, but suggestions and feedback are welcome. Feel free to open an issue
+- [ ] Success modal on payment confirmation
+- [ ] Order Success page 
 
-Built by **Bello Rihanat Oluwayemisi** 
+
+---
+
+## Author  **Bello Rihanat oluwayemisi**
+
+Built as a portfolio project showcasing frontend architecture, component design, and a checkout flow in React.
+
+---
+
+## License
+
+This project is for demonstration purposes. All images and data are either placeholder or dummy content.
