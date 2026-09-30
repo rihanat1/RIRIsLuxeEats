@@ -51,7 +51,7 @@ const Carousel = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 pointer-events-auto rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 sm:w-3sm:h-3 pointer-events-auto rounded-full transition-all duration-300 ${
               index === currentIndex 
                 ? 'bg-white scale-110' 
                 : 'bg-white/50 hover:bg-white/75'
