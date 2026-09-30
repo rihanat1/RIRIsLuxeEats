@@ -13,9 +13,7 @@ const CartCard = ({item}) => {
       </div>
 
       <div className="flex-1 w-full flex flex-col gap-4">
-        <p className="absolute top-5 sm:static sm:ml-auto right-2 border border-[#F2CA51] text-[#F2CA51] text-xs py-1 px-3 bg-[#212121] rounded-xl w-fit">
-        {item?.cuisine}
-      </p>
+       
         <div className="flex items-center justify-between">
           <p className="text-white/90 font-light text-[22px]">{item?.name}</p>
           <p className="text-[#D4AF37] font-light text-[20px]">${item?.price}</p>
