@@ -7,7 +7,7 @@ import {useGlobalContextHook} from "../Context/GlobalContext";
 const CartCard = ({item}) => {
     const {cart,setCart,removeFromCart,increaseQuantity,decreaseQuantity} = useGlobalContextHook()
   return (
-    <div className="relative border transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.10)] w-full border-[#1A1A1A] p-4 mb-4 flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-3 rounded-sm">
+    <div className="relative border transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.10)] w-full border-[#1A1A1A] p-4 mb-4 flex flex-col items-center bg-[#080808] gap-4 sm:flex-row sm:items-center sm:gap-3 rounded-sm">
       <div className="w-[12rem] sm:w-[10rem] flex-shrink-0 border border-primary sm:mt-4">
         <img src={item?.image} alt="" className="w-full h-auto" />
       </div>

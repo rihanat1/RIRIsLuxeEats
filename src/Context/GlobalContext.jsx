@@ -6,28 +6,37 @@ import cake from "../assets/Carousel/cake.png";
 import image4 from "../assets/Carousel/image4.png";
 import Dishes from "../JsFiles/FeaturedDishesData";
 
-
-console.log('Type:', typeof FeaturedDishes)
-
 const CreateGlobalContext = createContext();
 
 const GlobalContext = ({ children }) => {
   const images = [burger, beef, ravioli, cake, image4];
   const [carouselImages, setCarouselImages] = useState(images);
   const [slideInterval, setSlideInterval] = useState(5000);
-     const [productDetails, setProductDetails] = useState([...Dishes])
+  const [productDetails, setProductDetails] = useState([...Dishes]);
   const [featuredDishes, setFeaturedDishes] = useState(Dishes);
   const [cart, setCart] = useState([]);
-  
+  const [user, setUser] = useState(()=>{
+    const saved = localStorage.getItem("riri_user")
+    return saved? JSON.parse(saved) : null
+  })
 
-  function addToCart(item){
-    const existingItem = cart.find(cartItem => cartItem.id === item.id);
+  const signUp = (userData)=>{ //to get form from form state
+    setUser(userData)
+    localStorage.setItem("riri_user", JSON.stringify(userData))
+  }
+ const logOut = (userData)=>{
+  setUser(null)
+  localStorage.removeItem("riri_user")
+ }
+
+  function addToCart(item) {
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
       // If the item already exists in the cart, increase its quantity
-      const updatedCart = cart.map(cartItem =>
+      const updatedCart = cart.map((cartItem) =>
         cartItem.id === item.id
           ? { ...cartItem, quantity: cartItem.quantity + 1 }
-          : cartItem
+          : cartItem,
       );
       setCart(updatedCart);
     } else {
@@ -37,15 +46,25 @@ const GlobalContext = ({ children }) => {
   }
 
   function increaseQuantity(Id) {
-    const updatedCart = cart.map(cartItem =>cartItem.id === Id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem);
+    const updatedCart = cart.map((cartItem) =>
+      cartItem.id === Id
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        : cartItem,
+    );
     setCart(updatedCart);
   }
   function decreaseQuantity(Id) {
-    const updatedCart = cart.map(cartItem =>cartItem.id === Id ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem) .filter(cartItem => cartItem.quantity > 0); //  Remove at 0(0>0, false, so item gets removed)
+    const updatedCart = cart
+      .map((cartItem) =>
+        cartItem.id === Id
+          ? { ...cartItem, quantity: cartItem.quantity - 1 }
+          : cartItem,
+      )
+      .filter((cartItem) => cartItem.quantity > 0); //  Remove at 0(0>0, false, so item gets removed)
     setCart(updatedCart);
   }
   function removeFromCart(Id) {
-    const updatedCart = cart.filter(cartItem => cartItem.id !== Id); //Keep items where id does NOT equal Id
+    const updatedCart = cart.filter((cartItem) => cartItem.id !== Id); //Keep items where id does NOT equal Id
     setCart(updatedCart);
   }
   const value = {
@@ -62,8 +81,11 @@ const GlobalContext = ({ children }) => {
     removeFromCart,
     decreaseQuantity,
     increaseQuantity,
-    addToCart
-    
+    addToCart,
+    user,
+    setUser,
+    signUp,
+    logOut
   };
 
   return (

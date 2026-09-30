@@ -6,5 +6,7 @@ const AllPaths = {
     layout:"/",
     productsDetails:"/products/:id",
     viewCart:"/view-cart",
+    signUp:"/sign-up",
+   address:"/checkout-confirm"
 }
 export default AllPaths;

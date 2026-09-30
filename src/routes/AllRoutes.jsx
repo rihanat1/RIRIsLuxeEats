@@ -1,8 +1,10 @@
+import ConfirmPage from "../Pages/ConfirmPage.jsx"
 import ContactPage from "../Pages/ContactPage.jsx";
 import Home from "../Pages/Home.jsx";
 import MenuPage from "../Pages/MenuPage.jsx";
 import OurStoryPage from "../Pages/OurStoryPage.jsx";
 import ProductDetailsPage from "../Pages/ProductDetailsPage.jsx";
+import SignUpPage from "../Pages/SignUpPage.jsx";
 import ViewCartPage from "../Pages/ViewCartPage.jsx";
 import AllPaths from "./AllPaths.js";
 
@@ -36,6 +38,16 @@ const AllRoutes = [
       path:AllPaths.viewCart,
         element:<ViewCartPage/>,
         hasLayout:false
+    },
+    {
+      path:AllPaths.signUp,
+      element:<SignUpPage/>,
+      hasLayout:false
+    },
+    {
+      path:AllPaths.address,
+      element:<ConfirmPage/>,
+      hasLayout:false
     }
 
 ]
