@@ -1,15 +1,15 @@
 import React, { createContext, useContext, useState } from "react";
-import burger from "../assets/FeaturedImages/burger.png";
-import beef from "../assets/Carousel/beef.png";
-import ravioli from "../assets/Carousel/ravioli.png";
-import cake from "../assets/Carousel/cake.png";
-import image4 from "../assets/Carousel/image4.png";
+import food1 from "../assets/Carousel/food1.png"
+import food2 from "../assets/Carousel/food2.png"
+import food3 from "../assets/Carousel/food3.png"
+import food4 from "../assets/Carousel/food4.png"
+import food5 from "../assets/Carousel/food5.png"
 import Dishes from "../JsFiles/FeaturedDishesData";
 
 const CreateGlobalContext = createContext();
 
 const GlobalContext = ({ children }) => {
-  const images = [burger, beef, ravioli, cake, image4];
+  const images = [food1, food2, food3, food4, food5];
   const [carouselImages, setCarouselImages] = useState(images);
   const [slideInterval, setSlideInterval] = useState(5000);
   const [productDetails, setProductDetails] = useState([...Dishes]);

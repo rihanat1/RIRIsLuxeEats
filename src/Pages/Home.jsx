@@ -10,7 +10,7 @@ const Home = () => {
     <div className="">
       <div className="relative pt-20 min-h-[75vh] md:min-h-[80vh] lg:min-h-[90vh] xl:h-screen w-screen  ">
       <Carousel />
-      <div className=" absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+      <div className=" absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
       <Hero/>
     </div>
      <Cravings/>
